@@ -1,0 +1,21 @@
+# this can be solved by applying 2 for loop but it will not most optimized that's why we use binary search 
+
+class Solution {
+    public int countNegatives(int[][] grid) {
+        int count = 0;
+        for (int[] row : grid) {   # Taking one row at a time 
+            int left = 0, right = row.length - 1;
+            while (left <= right) {
+                int mid = left + (right - left) / 2;   # Finding the 1st negative number
+                if (row[mid] < 0) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            }
+            // all elements from 'left' to end are negative
+            count += row.length - left;
+        }
+        return count;
+    }
+}

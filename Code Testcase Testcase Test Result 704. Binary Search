@@ -1,0 +1,16 @@
+#This is the basic binary search problem
+
+class Solution {
+    public int search(int[] nums, int target) {
+        int left=0,right=nums.length-1;
+        while(left<=right){
+            int mid=left+(right-left)/2;       # Getting the mid value
+            if(nums[mid]==target)  return mid;     # if target is at mid index then return the mid;
+            else if(nums[mid] > target){   #if target is smaller than nums[mid]  then we have to decrease our searching range by shifting right to mid-1
+                right=mid-1;
+            }
+            else left=mid+1;  # If target is larger than the nums[mid] then we have to shift left to mid+1
+        }
+        return -1;
+    }
+}

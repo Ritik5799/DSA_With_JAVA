@@ -1,0 +1,20 @@
+  class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        HashSet<Integer> set=new HashSet<>();   
+        Set<Integer> al=new HashSet<>();
+        for(int i=0;i<nums1.length;i++){
+            set.add(nums1[i]);            #Add all element of nums1 into set
+        }
+        for(int j=0;j<nums2.length;j++){
+            if(set.contains(nums2[j])) {      # Check if the element is already present in set or not If it is present it means it is intersection of an array
+              al.add(nums2[j]);       # We add resulted element into set so that we can't get duplicate
+            }
+        }
+        int[] result= new int[al.size()];          # Converting set into array
+        int k=0;     
+        for(int num: al){
+            result[k++]=num;
+        }
+        return result;
+    }
+}

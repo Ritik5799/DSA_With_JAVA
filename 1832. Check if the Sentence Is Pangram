@@ -1,0 +1,10 @@
+  class Solution {
+    public boolean checkIfPangram(String sentence) {
+        for(char i='a' ; i<='z';i++){           # we will check every alphabet whether it is present or not if there is any letter missing it will return false
+            if(sentence.indexOf(i)==-1){           # If any letter is missing in sentence then it will return -1 index
+            return false;
+            }
+       } 
+       return true;      #if For loop does not return false it means it is panagram so return true
+    }
+}

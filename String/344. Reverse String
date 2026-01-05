@@ -1,0 +1,13 @@
+  class Solution {
+    public void reverseString(char[] s) {
+        int left=0,right= s.length-1;
+        while(left<=right){
+            char a=s[left];         //create a temporary char and interchange the leftmost with rightmost element
+            s[left]=s[right];
+            s[right]=a;
+            left++;
+            right--;
+
+        }
+    }
+}

@@ -2,7 +2,7 @@ class Solution {
     public int numJewelsInStones(String jewels, String stones) {
         HashSet<Character> set=new HashSet<>();
         int count=0;
-      //First store all the characters of jewels in set
+      //First store all the characters of jewels in set , because all the char in jewels is unique
         for(int i=0;i<jewels.length();i++){
             set.add(jewels.charAt(i));
         }
